@@ -1,7 +1,7 @@
 <section class="container-fluid">
   <h2 class="text-center">Cars Page</h2>
   <!-- SECTION new Car Form -->
-  <form onsubmit="app.CarsController.createCar()" class="row justify-content-center bg-white mb-4">
+  <form onsubmit="app.CarsController.createCar()" id="create-car-form" class="d-none row justify-content-center bg-white mb-4">
     <div class="col-10 text-center fw-bold">
       List your car today!
     </div>
@@ -23,7 +23,29 @@
     </div>
     <div class="mb-2 col-6">
       <label for="car-engine">Engine Type</label>
-      <input required class="form-control" type="text" id="car-engine" name="engineType" value="v6">
+      <select name="engineType" id="car-engine" class="form-control">
+        <option value="unknown">What's an engine?</option>
+        <option value="2 stroke">2 stroke</option>
+        <option value="4 cylinder">4 cylinder</option>
+        <option value="v6">v6</option>
+        <option value="v8">v8</option>
+        <option value="v10">v10</option>
+        <option value="v12">v12</option>
+        <option value="chunkco">chunkco</option>
+        <!-- NOTE these were pulled from the api/documentation as accepted 'enum' values
+      "unknown",
+      "2 stroke",
+      "4 cylinder",
+      "v6",
+      "v8",
+      "v10",
+      "v12",
+      "small",
+      "medium",
+      "large",
+      "chuncko" -->
+      </select>
+      <!-- <input required class="form-control" type="text" id="car-engine" name="engineType" value="v6"> -->
     </div>
     <div class="mb-2 col-6">
       <label for="car-price">Sell Price</label>
