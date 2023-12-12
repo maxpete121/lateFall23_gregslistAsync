@@ -30,6 +30,10 @@ export const router = new Router([
     view: 'app/views/HousesView.html'
   },
   {
+    path: '#/jobs',
+    view: 'app/views/JobsView'
+  },
+  {
     path: '#/account',
     middleware: [AuthGuard],
     controllers: [AccountController],
