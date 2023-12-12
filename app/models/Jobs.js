@@ -24,6 +24,10 @@ export class Jobs{
         <h6>Company: </h6>
         <h6>${this.company}</h6>
         </span>
+        <span class="d-flex">
+        <h6>Job Title: </h6>
+        <h6>${this.jobTitle}</h6>
+        </span>
         </div>
         `
     }
