@@ -1,7 +1,44 @@
 <section class="container-fluid">
-    <section>
+    <section class="">
         <h1>Houses Page</h1>
-        <div></div>
-        <div id="house-view" class="row"></div>
+        <div class="row bg-white">
+            <form class="" onsubmit="app.HouseController.newHouse()">
+               <div class="m-1 col-4">
+                <label for="car-make">Bedrooms:</label>
+                <input required class="form-control" type="number" id="houses-bedrooms" name="bedrooms">
+              </div>
+              <div class="m-1 col-4">
+                <label for="house-bathrooms">Bathrooms:</label>
+                <input required class="form-control" type="number" id="houses-bathrooms" name="bathrooms">
+              </div>
+              <div class="m-1 col-4">
+                <label for="house-year">Year:</label>
+                <input required class="form-control" type="number" id="houses-year" name="year">
+              </div>
+              <div class="m-1 col-4">
+                <label for="house-bathrooms">Price:</label>
+                <input required class="form-control" type="number" id="house-bathrooms" name="price">
+              </div>
+              <div class="m-1 col-4">
+                <label for="house-levels">Levels:</label>
+                <select required name="levels" id="house-levels">
+                    <option value="1">1 Story</option>
+                    <option value="2">2 Story</option>
+                    <option value="3">3 Story</option>
+                    <option value="4">4 Story</option>
+                </select>
+              </div>
+              <div class="m-1 col-9">
+                <label for="house-image">Image URL:</label>
+                <input required class="form-control" type="url" id="house-image" name="imgUrl" placeholder="https:...">
+              </div>
+              <div class="m-1 col-4">
+                <label for="house-description">Description:</label>
+                <textarea required name="description" id="house-description" cols="60" rows="4"></textarea>
+              </div>
+              <button>Post</button>
+            </form>
+        </div>
+        <div id="house-view" class="row justify-content-center"></div>
     </section>
 </section>

@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { houseService } from "../services/HousesService.js";
+import { getFormData } from "../utils/FormHandler.js";
 
 
 function _drawHouses(){
@@ -13,11 +14,21 @@ function _drawHouses(){
 export class HouseController{
     constructor(){
         console.log('House controller loaded')
-        this.getHouses()
         AppState.on('Houses', _drawHouses)
+        this.getHouses()
     }
 
     async getHouses(){
         houseService.getHouses()
     }
+
+    async newHouse(){
+        event.preventDefault()
+        const form = event.target
+        const formData = getFormData(form)
+        await houseService.newHouse(formData)
+        form.reset()
+
+    }
+
 }

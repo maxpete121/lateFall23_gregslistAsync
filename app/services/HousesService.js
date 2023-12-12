@@ -15,6 +15,13 @@ class HouseService{
         AppState.Houses = newHouses
         console.log(AppState.Houses)
     }
+
+    async newHouse(formData){
+        const response = await api.post('api/houses', formData)
+        const newHouse = new House(response.data)
+        AppState.Houses.push(newHouse)
+    }
+
 }
 
 export const houseService = new HouseService()
