@@ -9,6 +9,13 @@ import { api } from "./AxiosService.js"; // this is a instance of axios we can u
 
 
 class CarsService{
+  async removeCar(carId) {
+    const response = await api.delete(`api/cars/${carId}`)
+    console.log('🚗👋📡', response); //🧪
+    const indexToRemove = AppState.cars.findIndex(car => car.id == carId)
+    AppState.cars.splice(indexToRemove, 1) // 🧪 tested that car was removed, and also tested the Pop notification
+  }
+
   async createCar(formData) {
     const response = await api.post('api/cars', formData)
     console.log('🚗📃📡', response); // 🧪 look at payload and response data in dev tools, are they what they should be
@@ -23,7 +30,7 @@ class CarsService{
     console.log('🚗📡', response, axiosResponse); //🧪🧪🧪
     const body = await response.json()
     console.log('🚗👂', body); //🧪🧪 did you await the json()?
-    const newCars = body.map(carData => new Car(carData))
+    const newCars = body.map(carData => new Car(carData)) // try putting .reverse() in if you want to see newest items at the top
     console.log('✨✨✨🚗🚗🚗', newCars);// 🧪
     AppState.cars = newCars // 🧪 after I save them do they draw to the page?
   }

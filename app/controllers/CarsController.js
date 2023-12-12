@@ -24,6 +24,7 @@ export class CarsController{
     // _drawCars() only needed for the initial draw of static data in the appstate for testing
     AppState.on('cars', _drawCars)// 🧪 replaces the need for invoking draw ourselves
     AppState.on('user', _showCreateCarForm) //🧪 listening to the user, is waiting for the user to log in, THEN do the function
+    AppState.on('account', _drawCars) // if you don't re-draw the cars when the account arrives, then you will never see your delete buttons
     _showCreateCarForm() //🧪 this is so when the user, starts on a page that isn't the car page, it still loads in when you navigate to it
     this.getCars()
     // NOTE the listener draws the form when you start on the cars page, the call in the constructor draws the form when you navigate to the cars view from another view 
@@ -49,6 +50,17 @@ export class CarsController{
       await carsService.createCar(formData)
       form.reset()
     } catch (error) { // error in the catch is the error that occurred while trying to process the 'try'
+      console.error(error) // log the error back
+      Pop.toast(error.message)
+    }
+  }
+
+  async removeCar(carId){
+    try {
+      console.log('🔥🚗', carId); // 🧪 making sure the id gets passed
+      await carsService.removeCar(carId)
+      Pop.toast('Deleted Car', 'success')
+    } catch (error) {
       console.error(error) // log the error back
       Pop.toast(error.message)
     }
