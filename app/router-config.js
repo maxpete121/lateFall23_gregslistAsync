@@ -1,4 +1,5 @@
 import { AccountController } from "./controllers/AccountController.js";
+import { CarsController } from "./controllers/CarsController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
@@ -18,8 +19,9 @@ export const router = new Router([
     `
   },
   {
-    path: '#/about',
-    view: 'app/views/AboutView.html'
+    path: '#/cars',
+    controllers: [CarsController],
+    view: 'app/views/CarsView.html'
   },
   {
     path: '#/account',

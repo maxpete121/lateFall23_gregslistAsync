@@ -20,6 +20,13 @@ export const AuthService = Auth0Provider.initialize({
   }
 })
 
+export function AuthGuard(next) {
+  if (!AuthService || AuthService.loading) {
+    return setTimeout(() => AuthGuard(next), 750)
+  }
+  return AuthService.isAuthenticated ? next() : AuthService.loginWithRedirect()
+}
+
 AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, async () => {
   api.defaults.headers.authorization = AuthService.bearer
   api.interceptors.request.use(refreshAuthToken)
