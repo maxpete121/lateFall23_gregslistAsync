@@ -15,4 +15,16 @@ export class Jobs{
         this.updatedAt = data.updatedAt
         this.creator = data.creator
     }
+
+
+    get jobTemplate(){
+        return`
+        <div class="col-2 card">
+        <span class="d-flex">
+        <h6>Company: </h6>
+        <h6>${this.company}</h6>
+        </span>
+        </div>
+        `
+    }
 }

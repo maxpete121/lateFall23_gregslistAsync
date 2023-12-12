@@ -33,7 +33,7 @@ export const router = new Router([
   {
     path: '#/jobs',
     controllers: [JobsController],
-    view: 'app/views/JobsView'
+    view: 'app/views/JobsView.html'
   },
   {
     path: '#/account',
