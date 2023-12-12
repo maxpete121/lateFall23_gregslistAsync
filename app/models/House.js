@@ -22,22 +22,37 @@ export class House{
         return`
         <div class="col-2 card m-1 p-1">
         <img class="img-fluid" src="${this.imgUrl}" alt="Image Broken">
-        <span class = "d-flex">
+        <span class="d-flex">
+        <h6>Price: $</h6>
+        <h6>${this.price}</h6>
+        </span>
+        <span class="d-flex">
         <h6>Posted By:</h6>
         <h6>${this.creator.name}</h6>
-        </span class="d-flex">
+        </span>
+        <span class="d-flex">
         <h6>Year:</h6>
         <h6>${this.year}</h6>
         </span>
-        <span class = "d-flex">
+        <span class="d-flex">
         <h6>Levels:</h6>
         <h6>${this.levels}</h6>
         </span>
-        <span class = "d-flex">
+        <span class="d-flex">
         <h6>Bedrooms:</h6>
         <h6>${this.bedrooms}</h6>
         </span>
+        <span class="">
+        <h6>Description:</h6>
+        <h6>${this.description}</h6>
+        </span>
         </div>
+        `
+    }
+
+    get formTemplate(){
+        return`
+        
         `
     }
     
