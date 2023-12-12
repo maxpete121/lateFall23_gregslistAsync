@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js"
 
 
 
@@ -46,14 +47,20 @@ export class House{
         <h6>Description:</h6>
         <h6>${this.description}</h6>
         </span>
+        <span>
+        ${this.deleteTemplate}
+        </span>
         </div>
         `
     }
 
-    get formTemplate(){
-        return`
-        
-        `
+    get deleteTemplate(){
+        if(this.creatorId == AppState.account?.id){
+            return`
+            <button onclick="app.HouseController.removeHouse('${this._id}')">Delete</button>
+            `
+        }
+        return``
     }
     
 }

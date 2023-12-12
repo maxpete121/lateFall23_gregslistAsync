@@ -31,6 +31,10 @@ export class HouseController{
         houseService.getHouses()
     }
 
+    removeCar(){
+        
+    }
+
     async newHouse(){
         event.preventDefault()
         const form = event.target
