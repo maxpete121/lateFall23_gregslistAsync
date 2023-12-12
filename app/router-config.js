@@ -2,6 +2,7 @@ import { AccountController } from "./controllers/AccountController.js";
 import { CarsController } from "./controllers/CarsController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { HouseController } from "./controllers/HouseController.js";
+import { JobsController } from "./controllers/JobsController.js";
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
 
@@ -31,6 +32,7 @@ export const router = new Router([
   },
   {
     path: '#/jobs',
+    controllers: [JobsController],
     view: 'app/views/JobsView'
   },
   {
