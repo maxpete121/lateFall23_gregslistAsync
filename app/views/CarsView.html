@@ -1,5 +1,45 @@
 <section class="container-fluid">
   <h2 class="text-center">Cars Page</h2>
+  <!-- SECTION new Car Form -->
+  <form onsubmit="app.CarsController.createCar()" class="row justify-content-center bg-white mb-4">
+    <div class="col-10 text-center fw-bold">
+      List your car today!
+    </div>
+    <div class="mb-2 col-4">
+      <label for="car-make">Car Make</label>
+      <input required class="form-control" type="text" id="car-make" name="make" placeholder="Honda...">
+    </div>
+    <div class="mb-2 col-4">
+      <label for="car-model">Car Model</label>
+      <input required class="form-control" type="text" id="car-model" name="model" placeholder="Accord...">
+    </div>
+    <div class="mb-2 col-4">
+      <label for="car-year">Car Year</label>
+      <input required class="form-control" type="number" id="car-year" name="year" value="2023">
+    </div>
+    <div class="mb-2 col-12">
+      <label for="car-image">Image Url of Car</label>
+      <input required class="form-control" type="url" id="car-image" name="imgUrl">
+    </div>
+    <div class="mb-2 col-6">
+      <label for="car-engine">Engine Type</label>
+      <input required class="form-control" type="text" id="car-engine" name="engineType" value="v6">
+    </div>
+    <div class="mb-2 col-6">
+      <label for="car-price">Sell Price</label>
+      <input required class="form-control" type="number" id="car-price" name="price" value="2">
+    </div>
+    <div class="mb-2 col-12">
+      <label for="car-description">Description</label>
+      <textarea name="description" id="car-description" rows="5" class="w-100 form-control"></textarea>
+    </div>
+    <div class="mb-2 col-12 text-end">
+      <button type="submit" class="btn btn-primary">Create Listing <i class="mdi mdi-plus"></i></button>
+    </div>
+
+  </form>
+
+  <!-- SECTION for list of cars -->
   <section class="row" id="cars-list">
 
   </section>

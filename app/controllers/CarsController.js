@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { carsService } from "../services/CarsService.js";
+import { getFormData } from "../utils/FormHandler.js";
 import { setHTML } from "../utils/Writer.js";
 
 function _drawCars(){
@@ -22,5 +23,15 @@ export class CarsController{
 
   getCars(){
     carsService.getCars()
+  }
+
+  createCar(){
+    event.preventDefault()
+    console.log('📃🚗'); //🧪 create your form and test the prevent Default
+    const form = event.target // the target is whatever invoked this function 
+    const formData = getFormData(form)
+    console.log('🚗💾', formData); //🧪 are all the properties where you expected them to be
+    carsService.createCar(formData)
+    form.reset()
   }
 }

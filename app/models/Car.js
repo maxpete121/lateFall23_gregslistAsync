@@ -1,6 +1,6 @@
 
 
-
+// REVIEW when working with an API that you want to send data too, always check their documentation for a guide or 'model' that they use. In this case they make the rules and will only store what they specify
 export class Car{
   constructor(data){
     this.id = data.id
